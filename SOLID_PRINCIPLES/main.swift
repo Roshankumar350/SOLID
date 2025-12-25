@@ -30,3 +30,4 @@ import Foundation
 struct SomeModel: Decodable {
     let someAttribute: Int
 }
+

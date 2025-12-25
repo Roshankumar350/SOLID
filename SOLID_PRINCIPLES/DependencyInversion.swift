@@ -45,3 +45,29 @@ class ConcreteTypeAPIFetcher<T: Decodable> {
  }
  
  */
+
+
+/* Another way by using dependency injection
+   Example: dependency injection using the `Fetcher` abstraction.
+   Consumer depends on the `Fetcher` protocol (abstraction), not a concrete type.
+*/
+class Consumer<F: Fetcher> where F.T == SomeModel {
+    private let fetcher: F
+
+    init(fetcher: F) {
+        self.fetcher = fetcher
+    }
+
+    func load() {
+        fetcher.fetch { model in
+            print("completion chain called")
+        }
+    }
+}
+
+// Usage example (in real app this would be injected from outside)
+// Just wrapped this two function in doSomething() to stop compiler complaining error
+func doSomething() {
+    let consumer = Consumer(fetcher: APIFetcher<SomeModel>())
+    consumer.load()
+}

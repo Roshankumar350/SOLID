@@ -11,11 +11,12 @@ import Foundation
  * Subtypes or any confiming type must be substitutable for their base or confiming type
  */
 
-func fetchData(from fetcher: any Fetcher) {
-    fetcher.fetch { decodableType in
+func fetchData<F: Fetcher>(from fetcher: F) {
+    fetcher.fetch { (decodableType) in
         print("completion chain called")
     }
 }
+
 
 let apiFetcher = APIFetcher<SomeModel>()
 let localFileFetcher = LocalFileFetcher<SomeModel>()

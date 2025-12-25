@@ -16,7 +16,7 @@ import Foundation
 class LocalFileFetcher<T: Decodable>: Fetcher {
     func fetch(completion: @escaping (T?) -> Void) {
         // Do some realistic work
-        sleep(5)
+        sleep(2)
         do {
             let decoded = try JSONDecoder().decode(T.self, from: Data())
             completion(decoded)
