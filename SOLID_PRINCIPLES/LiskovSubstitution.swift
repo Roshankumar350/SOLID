@@ -12,7 +12,7 @@ import Foundation
  */
 
 func fetchData<F: Fetcher>(from fetcher: F) {
-    fetcher.fetch { (decodableType) in
+    fetcher.fetch { decodableType in
         print("completion chain called")
     }
 }
