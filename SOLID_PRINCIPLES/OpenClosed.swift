@@ -9,7 +9,7 @@ import Foundation
 
 /* O: Open–Closed Principle
  * Open for extension, closed for modification.
- * `Fetcher` is open for extension but is closed for modification (we are not modifying signature)
+ * `Fetcher` is open for extension but is closed for modification (we are not modifying signature or anything else)
  * - Like `LocalFileFetcher` is responsibile for `fetching` Local data at the same time in  `APIFetcher` was responsibile for `fetching` network data. So here we are open for extension and closed for modification.
  */
 
