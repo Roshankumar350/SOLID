@@ -8,7 +8,7 @@
 import Foundation
 
 /* S: Single Responsibility Principle
- * A type should have only one reason to change.
+ * A type should have only one responsibility.
  * APIFetcher has only one responsibile, and that is fetching network data
  */
 
